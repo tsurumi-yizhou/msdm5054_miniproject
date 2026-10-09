@@ -1,0 +1,88 @@
+{
+  "status": "passed",
+  "independent_metric_method": "Mann-Whitney rank ROC-AUC, threshold-group AP, mean squared probability error",
+  "experiments_checked": [
+    {
+      "experiment": "lightgbm_with_bureau",
+      "independent_oof_metrics": {
+        "roc_auc": 0.7692565646616184,
+        "average_precision": 0.2553068430903977,
+        "brier_score": 0.06720054306809728
+      },
+      "fold_metrics_match": true
+    },
+    {
+      "experiment": "lightgbm_engineered",
+      "independent_oof_metrics": {
+        "roc_auc": 0.7647275006354063,
+        "average_precision": 0.2480277956533967,
+        "brier_score": 0.06754196713984147
+      },
+      "fold_metrics_match": true
+    },
+    {
+      "experiment": "lightgbm_raw",
+      "independent_oof_metrics": {
+        "roc_auc": 0.7569343230228915,
+        "average_precision": 0.23971009105965346,
+        "brier_score": 0.06797246161785474
+      },
+      "fold_metrics_match": true
+    },
+    {
+      "experiment": "logistic_engineered",
+      "independent_oof_metrics": {
+        "roc_auc": 0.7497240068134582,
+        "average_precision": 0.22870012998192726,
+        "brier_score": 0.06843604062909682
+      },
+      "fold_metrics_match": true
+    },
+    {
+      "experiment": "logistic_raw",
+      "independent_oof_metrics": {
+        "roc_auc": 0.7475844479907382,
+        "average_precision": 0.22476447769732869,
+        "brier_score": 0.06860693025773043
+      },
+      "fold_metrics_match": true
+    },
+    {
+      "experiment": "lightgbm_no_external",
+      "independent_oof_metrics": {
+        "roc_auc": 0.7146847651176789,
+        "average_precision": 0.19052206066688154,
+        "brier_score": 0.07027876403213516
+      },
+      "fold_metrics_match": true
+    },
+    {
+      "experiment": "dummy_prior",
+      "independent_oof_metrics": {
+        "roc_auc": 0.4999973468701912,
+        "average_precision": 0.08072868819668139,
+        "brier_score": 0.0742118973039303
+      },
+      "fold_metrics_match": true
+    }
+  ],
+  "folds_checked": 35,
+  "train_rows": 307511,
+  "development_rows": 246008,
+  "holdout_rows": 61503,
+  "holdout_independent_metrics": {
+    "roc_auc": 0.7726468455102802,
+    "average_precision": 0.26847918371658425,
+    "brier_score": 0.06667246452087645
+  },
+  "fixed_seed_splits_verified": true,
+  "oof_labels_and_fold_membership_verified": true,
+  "model_reload_predictions_verified": true,
+  "development_only_imputation_verified": true,
+  "submission_ids_probabilities_and_model_verified": true,
+  "frozen_plan_input_and_code_hashes_verified": true,
+  "logistic_convergence_verified": true,
+  "holdout_model_sha256": "54bf8379ee23dc75093beaf8f17a43fb2aca3f659e4d1aa9d1b51fa7f46c8359",
+  "final_model_sha256": "80a4413a5e6fd56d481ca8e7201cc3154790efe64d18e5ecac26748f3edd4f17",
+  "scope_limit": "Local random application validation; no Kaggle hidden-label score and no claim of prospective or causal validation."
+}

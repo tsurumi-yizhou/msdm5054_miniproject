@@ -1,0 +1,2 @@
+data/raw/bureau.csv filter=lfs diff=lfs merge=lfs -text
+data/raw/application_train.csv filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,159 @@
+{
+  "source": "https://www.kaggle.com/competitions/home-credit-default-risk/data",
+  "data_directory": "/home/yizhou/miniproject/data/raw",
+  "input_sha256": {
+    "application_train.csv": "52e96b895b1112e1c853f670e58372719c8441c5ed1c57ac2f7fad559d784f5f",
+    "application_test.csv": "a36161331d839150a67b6216d4de066f543a3b01a34061507d40e76612e0dec8",
+    "bureau.csv": "9d799143423f280720cf51c1bfbbab2a0422da8ff2763335bb30bf43155494f7",
+    "sample_submission.csv": "95258f8383ad9da4921120d695a12f2321ed7d0963507636f9f38ce0025633cb"
+  },
+  "full_train_rows": 307511,
+  "used_train_rows": 307511,
+  "test_rows": 48744,
+  "sampled_run": false,
+  "seed": 42,
+  "folds": 5,
+  "holdout_fraction": 0.2,
+  "threads": 4,
+  "trees": 400,
+  "selected_experiment": {
+    "name": "lightgbm_with_bureau",
+    "model": "lightgbm",
+    "engineered": true,
+    "history": true,
+    "drop_external": false
+  },
+  "experiments": [
+    {
+      "name": "dummy_prior",
+      "model": "dummy",
+      "engineered": false,
+      "history": false,
+      "drop_external": false
+    },
+    {
+      "name": "logistic_raw",
+      "model": "logistic",
+      "engineered": false,
+      "history": false,
+      "drop_external": false
+    },
+    {
+      "name": "logistic_engineered",
+      "model": "logistic",
+      "engineered": true,
+      "history": false,
+      "drop_external": false
+    },
+    {
+      "name": "lightgbm_raw",
+      "model": "lightgbm",
+      "engineered": false,
+      "history": false,
+      "drop_external": false
+    },
+    {
+      "name": "lightgbm_engineered",
+      "model": "lightgbm",
+      "engineered": true,
+      "history": false,
+      "drop_external": false
+    },
+    {
+      "name": "lightgbm_no_external",
+      "model": "lightgbm",
+      "engineered": true,
+      "history": false,
+      "drop_external": true
+    },
+    {
+      "name": "lightgbm_with_bureau",
+      "model": "lightgbm",
+      "engineered": true,
+      "history": true,
+      "drop_external": false
+    }
+  ],
+  "python": "3.14.4",
+  "packages": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "lightgbm": "4.7.0",
+    "matplotlib": "3.11.2"
+  },
+  "code_sha256": "2a1339b803a1e34d7e1fbd9b47f117e32c1475f33f3741f066985c376b942ecc",
+  "model_parameters": {
+    "boosting_type": "gbdt",
+    "class_weight": null,
+    "colsample_bytree": 0.8,
+    "importance_type": "split",
+    "learning_rate": 0.05,
+    "max_depth": -1,
+    "min_child_samples": 40,
+    "min_child_weight": 0.001,
+    "min_split_gain": 0.0,
+    "n_estimators": 400,
+    "n_jobs": 4,
+    "num_leaves": 31,
+    "objective": null,
+    "random_state": 42,
+    "reg_alpha": 0.0,
+    "reg_lambda": 1.0,
+    "subsample": 1.0,
+    "subsample_for_bin": 200000,
+    "subsample_freq": 0,
+    "verbosity": -1,
+    "deterministic": true,
+    "force_col_wise": true
+  },
+  "selection_rule": "Highest mean development CV ROC-AUC; stable experiment order breaks ties. Holdout checked only after selection.",
+  "validation_limit": "Stratified random applicant split; does not establish future-time generalization or lending policy effects.",
+  "download_provenance": {
+    "original_source": "https://www.kaggle.com/competitions/home-credit-default-risk/data",
+    "download_source": "https://www.kaggle.com/datasets/megancrenshaw/home-credit-default-risk",
+    "download_source_kind": "Separately published public Kaggle copy, not an authenticated competition download",
+    "dataset_version": 2,
+    "retrieved_at_utc": "2026-09-30T11:19:25.065395+00:00",
+    "official_download_status": "HTTP 401 without authentication; no Kaggle credentials were available",
+    "identity_limit": "Original official file hashes are unavailable. File identity is checked against a second public copy and original published schema/definitions.",
+    "files": {
+      "application_train.csv": {
+        "remote_name": "home-credit-default-risk/application_train.csv",
+        "download_url": "https://www.kaggle.com/api/v1/datasets/download/megancrenshaw/home-credit-default-risk/home-credit-default-risk%2Fapplication_train.csv?datasetVersionNumber=2",
+        "bytes": 166133370,
+        "sha256": "52e96b895b1112e1c853f670e58372719c8441c5ed1c57ac2f7fad559d784f5f",
+        "archive_bytes": 37847529,
+        "archive_sha256": "468562f85ee8ce25e6eb29fb9d93fb001b2943f9fb142dfca250203286ab57bc"
+      },
+      "application_test.csv": {
+        "remote_name": "home-credit-default-risk/application_test.csv",
+        "download_url": "https://www.kaggle.com/api/v1/datasets/download/megancrenshaw/home-credit-default-risk/home-credit-default-risk%2Fapplication_test.csv?datasetVersionNumber=2",
+        "bytes": 26567651,
+        "sha256": "a36161331d839150a67b6216d4de066f543a3b01a34061507d40e76612e0dec8",
+        "archive_bytes": 6091687,
+        "archive_sha256": "f75536cec06d43a3f9448aab5491ad8e01ffce6ecf87837d20d047313e325008"
+      },
+      "sample_submission.csv": {
+        "remote_name": "home-credit-default-risk/sample_submission.csv",
+        "download_url": "https://www.kaggle.com/api/v1/datasets/download/megancrenshaw/home-credit-default-risk/home-credit-default-risk%2Fsample_submission.csv?datasetVersionNumber=2",
+        "bytes": 536202,
+        "sha256": "95258f8383ad9da4921120d695a12f2321ed7d0963507636f9f38ce0025633cb"
+      },
+      "bureau.csv": {
+        "remote_name": "bureau.csv",
+        "download_url": "https://www.kaggle.com/api/v1/datasets/download/megancrenshaw/home-credit-default-risk/bureau.csv?datasetVersionNumber=2",
+        "bytes": 170016717,
+        "sha256": "9d799143423f280720cf51c1bfbbab2a0422da8ff2763335bb30bf43155494f7",
+        "archive_bytes": 38550359,
+        "archive_sha256": "4803c6f157c570b2b9d66e37b9c1b107c474c1915cbcb4db0365eb65f109d38f"
+      },
+      "HomeCredit_columns_description.csv": {
+        "remote_name": "HomeCredit_columns_description.csv",
+        "download_url": "https://www.kaggle.com/api/v1/datasets/download/megancrenshaw/home-credit-default-risk/HomeCredit_columns_description.csv?datasetVersionNumber=2",
+        "bytes": 37383,
+        "sha256": "eef7665398228a80f7367c9258220c5fbe1038f3f54094244f354d54e2d4fb03"
+      }
+    }
+  }
+}

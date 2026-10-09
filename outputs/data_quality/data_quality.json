@@ -1,0 +1,120 @@
+{
+  "status": "passed_with_documented_limitations",
+  "unit": "loan application; SK_ID_CURR is the loan/application ID, not a verified unique natural-person ID",
+  "source_manifest_sha256": "3ae8e6480f85633d825e7c0767f506a8fee22b9b0ccd6f20ce84efa4479bc966",
+  "source_identity": {
+    "application_train.csv": {
+      "sha256": "52e96b895b1112e1c853f670e58372719c8441c5ed1c57ac2f7fad559d784f5f",
+      "exact_byte_match": true,
+      "independent_source": "https://www.kaggle.com/datasets/anggundwilestari/home-credit",
+      "independent_dataset_version": 4
+    },
+    "bureau.csv": {
+      "sha256": "9d799143423f280720cf51c1bfbbab2a0422da8ff2763335bb30bf43155494f7",
+      "exact_byte_match": true,
+      "independent_source": "https://www.kaggle.com/datasets/anggundwilestari/home-credit",
+      "independent_dataset_version": 4
+    }
+  },
+  "source_limit": "Exact identity established between two public Kaggle copies. An authenticated competition hash was unavailable; this is not a claim of direct official download.",
+  "shapes": {
+    "train": [
+      307511,
+      122
+    ],
+    "test": [
+      48744,
+      121
+    ],
+    "bureau": [
+      1716428,
+      17
+    ]
+  },
+  "label_counts": {
+    "0": 282686,
+    "1": 24825
+  },
+  "payment_difficulty_fraction": 0.08072881945686496,
+  "dictionary_definitions": {
+    "SK_ID_CURR": "ID of loan in our sample",
+    "TARGET": "Target variable (1 - client with payment difficulties: he/she had late payment more than X days on at least one of the first Y installments of the loan in our sample, 0 - all other cases)",
+    "DAYS_EMPLOYED": "How many days before the application the person started current employment",
+    "EXT_SOURCE_1": "Normalized score from external data source",
+    "EXT_SOURCE_2": "Normalized score from external data source",
+    "EXT_SOURCE_3": "Normalized score from external data source"
+  },
+  "duplicate_application_ids": {
+    "train": 0,
+    "test": 0
+  },
+  "exact_duplicate_train_rows": 0,
+  "train_test_id_overlap": 0,
+  "bureau_orphan_records": 0,
+  "bureau_future_loan_start_records": 0,
+  "bureau_loan_id_duplicates": 0,
+  "train_applications_with_bureau": 263491,
+  "test_applications_with_bureau": 42320,
+  "employment_sentinel_count": 55374,
+  "gender_XNA_count": 4,
+  "numeric_infinite_values": 0,
+  "negative_amount_counts": {
+    "AMT_INCOME_TOTAL": 0,
+    "AMT_CREDIT": 0,
+    "AMT_ANNUITY": 0,
+    "AMT_GOODS_PRICE": 0
+  },
+  "zero_amount_counts": {
+    "AMT_INCOME_TOTAL": 0,
+    "AMT_CREDIT": 0,
+    "AMT_ANNUITY": 0,
+    "AMT_GOODS_PRICE": 0
+  },
+  "invalid_external_score_counts": {
+    "EXT_SOURCE_1": 0,
+    "EXT_SOURCE_2": 0,
+    "EXT_SOURCE_3": 0
+  },
+  "unseen_test_category_row_counts": {
+    "NAME_CONTRACT_TYPE": 0,
+    "CODE_GENDER": 0,
+    "FLAG_OWN_CAR": 0,
+    "FLAG_OWN_REALTY": 0,
+    "NAME_TYPE_SUITE": 0,
+    "NAME_INCOME_TYPE": 0,
+    "NAME_EDUCATION_TYPE": 0,
+    "NAME_FAMILY_STATUS": 0,
+    "NAME_HOUSING_TYPE": 0,
+    "OCCUPATION_TYPE": 0,
+    "WEEKDAY_APPR_PROCESS_START": 0,
+    "ORGANIZATION_TYPE": 0,
+    "FONDKAPREMONT_MODE": 0,
+    "HOUSETYPE_MODE": 0,
+    "WALLSMATERIAL_MODE": 0,
+    "EMERGENCYSTATE_MODE": 0
+  },
+  "all_missing_train_columns": [],
+  "top_missing_train_columns": {
+    "COMMONAREA_AVG": 0.6987229725115525,
+    "COMMONAREA_MEDI": 0.6987229725115525,
+    "COMMONAREA_MODE": 0.6987229725115525,
+    "NONLIVINGAPARTMENTS_AVG": 0.6943296337366793,
+    "NONLIVINGAPARTMENTS_MEDI": 0.6943296337366793,
+    "NONLIVINGAPARTMENTS_MODE": 0.6943296337366793,
+    "FONDKAPREMONT_MODE": 0.6838617155158677,
+    "LIVINGAPARTMENTS_MEDI": 0.6835495315614726,
+    "LIVINGAPARTMENTS_AVG": 0.6835495315614726,
+    "LIVINGAPARTMENTS_MODE": 0.6835495315614726,
+    "FLOORSMIN_MODE": 0.6784862980511266,
+    "FLOORSMIN_AVG": 0.6784862980511266
+  },
+  "train_memory_bytes": 529515493,
+  "required_label_key_schema_checks": "passed",
+  "fold_preprocessing_design": "Median imputation, scaling and one-hot fitting happen only inside each development training fold.",
+  "limitations": [
+    "Historical competition snapshot, not current lending population.",
+    "Actual application calendar dates and unique natural-person identifiers are unavailable; random application splits do not establish future-time performance.",
+    "Missingness and special values are retained/encoded, not silently removed.",
+    "TARGET denotes payment difficulty per hidden X/Y criteria; it is not a separately validated bankruptcy or fixed-horizon default event."
+  ]
+}

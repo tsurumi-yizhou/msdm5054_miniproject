@@ -1,0 +1,17 @@
+{
+  "status": "checked",
+  "files": [
+    "cv_comparison.png",
+    "paired_feature_gains.png",
+    "holdout_curves.png",
+    "holdout_calibration.png",
+    "training_gain_top15.png",
+    "label_distribution.png",
+    "missingness.png"
+  ],
+  "notebook_executed_top_to_bottom": true,
+  "saved_notebook_image_outputs": 7,
+  "checked": "Actual chart PNGs inspected for labels, ranges, counts, clipping and legend consistency; chart metrics reconcile with saved predictions.",
+  "unavailable_check": "Full Notebook browser layout was not inspected because no browser is installed.",
+  "calibration_note": "Ten equal-frequency bins; bin-average calibration does not establish calibration in every subgroup or sparse probability tail. Bin counts/ranges are saved separately."
+}

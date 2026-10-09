@@ -1,0 +1,13 @@
+{
+  "selected_experiment": "lightgbm_engineered",
+  "n": 6000,
+  "default_fraction": 0.08066666666666666,
+  "roc_auc": 0.7208031931151451,
+  "average_precision": 0.21045347461433628,
+  "brier_score": 0.06960881656102434,
+  "auc_fixed_prediction_bootstrap_95_interval": [
+    0.6953083048412132,
+    0.7446762124008893
+  ],
+  "interval_note": "Stratified application bootstrap, 1000 draws; conditional on this fitted model. Does not include training/model-selection uncertainty."
+}
